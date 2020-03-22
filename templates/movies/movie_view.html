@@ -1,4 +1,5 @@
 {% extends 'lewflix/base.html' %}
+{% load serve_video %}
 
 {% block content %}
     <div class="movie-view">
@@ -6,7 +7,7 @@
         <div class="movie-view__content">
             <div class="movie-view__player">
                 <video controls>
-                    <source src="{{ movie.video_location }}" />
+                    <source src="{{ movie.video_location|video }}" />
                 </video>
             </div>
             <div class="movie-view__details">
