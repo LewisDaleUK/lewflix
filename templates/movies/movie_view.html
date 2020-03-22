@@ -1,0 +1,22 @@
+{% extends 'lewflix/base.html' %}
+
+{% block content %}
+    <div class="movie-view">
+        <h1>{{ movie.title }}</h1>
+        <div class="movie-view__content">
+            <div class="movie-view__player">
+                <video controls>
+                    <source src="{{ movie.video_location }}" />
+                </video>
+            </div>
+            <div class="movie-view__details">
+                <span class="year-of-release">
+                    <strong>Year:</strong> {{ movie.year }}
+                </span>
+                <span class="description">
+                    {{ movie.description }}
+                </span>
+            </div>
+        </div>
+    </div>
+{% endblock %}
