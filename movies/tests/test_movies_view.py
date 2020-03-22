@@ -18,4 +18,6 @@ class MoviesViewTests(TestCase):
         create_movie("Test Movie", 2012, "http://fake-image-url")
         response = self.client.get(reverse('movies:index'))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, "Test Movie (2012)")
+        self.assertContains(response, "Test Movie")
+        self.assertContains(response, "(2012)")
+        self.assertContains(response, "src=\"http://fake-image-url\"")

@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+.movie-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 80vw;
+}
+
+.movie {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 5px;
+    width: 15%;
+}
+
+.movie__poster {
+    height: 150px;
+    margin: 0 auto 10px;
+}
