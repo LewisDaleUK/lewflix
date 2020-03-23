@@ -5,6 +5,22 @@
         <link rel="stylesheet" href="{% static "movies.css" %}">
     </head>
     <body>
+        <nav>
+            <div class="logo">
+                <svg viewbox="0 0 50 50">
+                    <path id="curve" d="m 5 20 a 200 200 0 0 1 50 0"/>
+                    <text width="50">
+                        <textPath xlink:href="#curve">
+                            LewFlix
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+            <ul class="navigation">
+                <li><a href="/movies">Movies</a></li>
+                <li><a href="/tv">TV Shows</a></li>
+            </ul>
+        </nav>
         {% block content %}
         {% endblock %}
     </body>

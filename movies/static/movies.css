@@ -1,14 +1,44 @@
+@font-face {
+    font-family: 'bebas-neue';
+    src: url(BebasNeue.otf);
+}
+
 * {
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
     height: 100%;
     margin: 0;
-    padding: 10px;
     width: 100vw;
 }
 
+path {
+    fill: transparent;
+    stroke: none;
+}
+
+nav {
+    background: #E50914;
+    display: flex;
+    padding: 0 10%;
+}
+
+.logo {
+    color: white;
+    font-family: 'bebas-neue', "Arial", sans-serif;
+    height: 80px;
+    width: 150px;
+}
+
+.logo svg {
+    fill: white;
+}
+
+.logo textPath {
+    font-family: 'bebas-neue', "Arial", sans-serif;
+}
 .movie-list {
     display: flex;
     flex-direction: row;
@@ -33,6 +63,7 @@ body {
 .movie-view {
     display: flex;
     flex-direction: column;
+    padding: 0 10px;
     width: 100%;
 }
 
@@ -52,4 +83,24 @@ body {
     display: flex;
     flex-direction: column;
     width: 50%;
+}
+
+.navigation {
+    align-items: center;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 210px;
+}
+
+.navigation li a {
+    color: white;
+    display: block;
+    font-family: "Arial", sans-serif;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.navigation li a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
 }
