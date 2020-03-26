@@ -9,11 +9,16 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     margin: 0;
     width: 100vw;
 }
 
+main {
+    flex-grow: 1;
+}
 path {
     fill: transparent;
     stroke: none;
@@ -49,9 +54,11 @@ nav {
 
 .movie {
     align-items: center;
+    color: black;
     display: flex;
     flex-direction: column;
     margin: 10px 5px;
+    text-decoration: none;
     width: 15%;
 }
 
@@ -61,9 +68,12 @@ nav {
 }
 
 .movie-view {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
     display: flex;
     flex-direction: column;
-    padding: 0 10px;
+    height: 100%;
+    padding: 0 10%;
     width: 100%;
 }
 
@@ -72,7 +82,7 @@ nav {
 }
 
 .movie-view__player {
-    width: 50%;
+    width: 70%;
 }
 
 .movie-view__player video {
@@ -82,8 +92,13 @@ nav {
 .movie-view__details {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 30%;
 }
+
+.movie-view__details > span {
+    margin: 10px 0;
+}
+
 
 .navigation {
     align-items: center;
