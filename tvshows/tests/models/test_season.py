@@ -15,7 +15,9 @@ def create_random_episodes(season, length):
 
     episodes = []
     for i in range(0, length):
-        episodes.append(Episode.objects.create(title=fake.job(), episode_number=i, description=fake.paragraph(), season=season))
+        episodes.append(
+            Episode.objects.create(title=fake.job(), episode_number=i, description=fake.paragraph(), season=season)
+        )
 
     return episodes
 

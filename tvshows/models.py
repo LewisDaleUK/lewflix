@@ -7,6 +7,9 @@ class TVShow(models.Model):
     start_year = models.DateField()
     image_url = models.CharField(max_length=512)
 
+    def __str__(self):
+        return "{} ({})".format(self.title, self.start_year.year)
+
 
 class Season(models.Model):
     number = models.IntegerField()
