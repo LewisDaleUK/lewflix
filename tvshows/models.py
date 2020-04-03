@@ -24,6 +24,7 @@ class Episode(models.Model):
     episode_number = models.IntegerField()
     description = models.TextField(blank=True)
     season = models.ForeignKey(Season, on_delete=models.CASCADE)
+    video_location = models.TextField(max_length=512)
 
     def __str__(self):
         formatted_episode = str(self.episode_number).zfill(2)
