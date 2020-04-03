@@ -1,0 +1,18 @@
+{% extends 'lewflix/base.html' %}
+
+{% block content %}
+    <div class="season-view">
+        <h1>{{ tv_show.title }} - Season {{ season.number }}</h1>
+        {% if episodes|length > 0 %}
+            {% for episode in episodes %}
+                <div class="season__episode">
+                    <a href="{% url 'tvshows:episode' tv_show.id season.number episode.episode_number %}">
+                        Episode {{ episode.episode_number }}: {{ episode.title }}
+                    </a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <span>No episodes found for this season</span>
+        {% endif %}
+    </div>
+{% endblock %}
