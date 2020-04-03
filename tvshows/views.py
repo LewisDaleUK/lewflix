@@ -27,12 +27,14 @@ def get_episode(request, tv_show, season, episode):
     tv_episode = get_object_or_404(Episode, episode_number=episode, season=tv_season)
 
     next_episode = get_next_episode(tv_show, tv_season, tv_episode)
+    previous_episode = get_previous_episode(tv_show, tv_season, tv_episode)
 
     return render(request, 'tvshows/view_episode.html', {
         'tv_show': tv_show,
         'season': tv_season,
         'episode': tv_episode,
-        'next_episode': next_episode
+        'next_episode': next_episode,
+        'previous_episode': previous_episode
     })
 
 
@@ -45,5 +47,18 @@ def get_next_episode(tv_show, season, current_episode):
 
     if season.number < season_list.last().number:
         return Episode.objects.filter(season__number=season.number+1).order_by('episode_number').first()
+
+    return None
+
+
+def get_previous_episode(tv_show, season, current_episode):
+    episode_list = Episode.objects.filter(season=season).order_by('episode_number')
+    season_list = Season.objects.filter(tv_show=tv_show).order_by('number')
+
+    if current_episode.episode_number > episode_list.first().episode_number:
+        return episode_list.filter(episode_number=current_episode.episode_number - 1).first()
+
+    if season.number > season_list.first().number:
+        return Episode.objects.filter(season__number=season.number - 1).order_by('episode_number').last()
 
     return None

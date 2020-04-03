@@ -1,25 +1,36 @@
 {% extends 'lewflix/base.html' %}
 {% load serve_video %}
 
+
 {% block content %}
     <div class="movie-view">
         <h1>Episode {{ episode.episode_number }} - {{ episode.title }}</h1>
         <div class="movie-view__content">
             <div class="movie-view__player">
                 <video controls>
-                    <source src="{{ episode.video_location|video }}" />
+                    <source src="{{ episode.video_location|video }}"/>
                 </video>
             </div>
-            <div class="movie-view__details">
+            <div class="movie-view__details episode">
                 <span class="description">
                     {{ episode.description }}
                 </span>
+                <div class="episode-controls">
+                    {% if previous_episode %}
+                        <a class="movie-view__previous"
+                           href="{% url 'tvshows:episode' tv_show.id previous_episode.season.number previous_episode.episode_number %}">
+                            Previous Episode
+                        </a>
+                    {% endif %}
+                    {% if next_episode %}
+                        <a class="movie-view__next"
+                           href="{% url 'tvshows:episode' tv_show.id next_episode.season.number next_episode.episode_number %}">
+                            Next Episode
+                        </a>
+                    {% endif %}
+                </div>
             </div>
         </div>
-        {% if next_episode %}
-            <a class="movie-view__next" href="{% url 'tvshows:episode' tv_show.id next_episode.season.number next_episode.episode_number %}">
-                Next Episode
-            </a>
-        {% endif %}
+
     </div>
 {% endblock %}

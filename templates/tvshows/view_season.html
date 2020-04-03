@@ -1,7 +1,7 @@
 {% extends 'lewflix/base.html' %}
 
 {% block content %}
-    <div class="season-view">
+    <div class="movie-view season-view">
         <h1>{{ tv_show.title }} - Season {{ season.number }}</h1>
         {% if episodes|length > 0 %}
             {% for episode in episodes %}

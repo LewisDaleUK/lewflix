@@ -1,0 +1,67 @@
+.tv-show__season, .season__episode {
+    background: white;
+    color: rgba(0, 0, 0, 0.7);
+    display: block;
+    font-size: 1.5rem;
+    height: 80px;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+.tv-show__season a, .season__episode a {
+    color: inherit;
+    display: block;
+    height: 100%;
+    padding: 25px 40px;
+    text-decoration: none;
+    width: 100%;
+}
+
+.movie-view__details.episode {
+    justify-content: space-between;
+}
+
+.episode-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.movie-view__next, .movie-view__previous {
+    background: white;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.2rem;
+    min-width: 100px;
+    padding: 10px 20px;
+    position: relative;
+    text-decoration: none;
+    width: 48%;
+}
+
+.movie-view__next::after {
+    content: "\203A";
+    font-size: 2rem;
+    height: 100%;
+    padding: 0 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.movie-view__previous::before {
+    content: "\2039";
+    font-size: 2rem;
+    height: 100%;
+    padding: 0 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.movie-view__previous {
+    padding-left: 30px;
+}
+
+.movie-view__next {
+    padding-right: 30px;
+}
