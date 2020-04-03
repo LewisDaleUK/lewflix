@@ -25,12 +25,12 @@ class TestTVShow(TestCase):
 
         self.assertEqual(created_tv_show, retrieved_tv_show)
 
-    def test_convert_season_to_string(self):
+    def test_convert_tv_show_to_string(self):
         tv_show = create_tv_show("Test Title", "2020")
 
         self.assertEqual("Test Title (2020)", str(tv_show))
 
-    def test_season_can_get_list_of_episodes(self):
+    def test_tv_show_can_get_list_of_seasons(self):
         tv_show = create_tv_show("Test Title", "2020")
         created_seasons = create_random_season(tv_show, 20)
 

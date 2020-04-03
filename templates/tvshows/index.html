@@ -1,0 +1,19 @@
+{% extends 'lewflix/base.html' %}
+
+{% block content %}
+    <div class="movie-list">
+        {% if tvshows|length > 0 %}
+            {% for tvshow in tvshows %}
+                <a class="movie" href="{% url 'tvshows:tvshow' tvshow.id %}">
+                        <img class="movie__poster" src="{{ tvshow.image_url }}" alt="{{ tvshow.title }}"/>
+                        <div class="movie__details">
+                            <span class="movie__title">{{ tvshow.title }}</span>
+                            <span class="movie__year">({{ tvshow.start_year.year }})</span>
+                        </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <span>There are no TV shows currently available</span>
+        {% endif %}
+    </div>
+{% endblock %}

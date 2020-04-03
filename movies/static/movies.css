@@ -18,7 +18,9 @@ body {
 
 main {
     flex-grow: 1;
+    padding-top: 80px;
 }
+
 path {
     fill: transparent;
     stroke: none;
@@ -27,7 +29,10 @@ path {
 nav {
     background: #E50914;
     display: flex;
+    height: 80px;
     padding: 0 10%;
+    position: fixed;
+    width: 100%;
 }
 
 .logo {

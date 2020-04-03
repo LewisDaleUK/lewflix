@@ -1,0 +1,18 @@
+{% extends 'lewflix/base.html' %}
+
+{% block content %}
+    <div class="tv-show-view">
+        <h1>{{ tv_show.title }}</h1>
+        {% if seasons|length > 0 %}
+            {% for season in seasons %}
+                <div class="tv-show__season">
+                    <a href="{% url 'tvshows:season' tv_show.id season.number %}">
+                        Season {{ season.number }}
+                    </a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <span>There are no seasons available for this TV show</span>
+        {% endif %}
+    </div>
+{% endblock %}
